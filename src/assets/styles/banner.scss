@@ -1,0 +1,348 @@
+// @import url('https://fonts.googleapis.com/css?family=Noto Sans Display');
+// @import url('https://fonts.googleapis.com/css?family=Noto Sans Arabic');
+// @import url('https://fonts.googleapis.com/css?family=Amiri');
+@font-face {
+    font-family: 'noto-sans-arabic-medium';
+    src: local('noto-sans-arabic-medium'), url(../fonts/NotoSansArabicUI-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'noto-sans-arabic-bold';
+    src: local('noto-sans-arabic-bold'), url(../fonts/NotoSansArabicUI-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'nexa-light';
+    src: local('noto-sans-arabic-medium'), url(../fonts/NexaLight.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'nexa-bold';
+    src: local('noto-sans-arabic-bold'), url(../fonts/NexaBold.otf) format('truetype');
+}
+// @font-face {
+//     font-family: noto-sans-arabic-regular;
+//     src: url("../fonts/NotoSansArabic-Regular.ttf");
+//   }
+// @font-face {
+// font-family: noto-sans-arabic-semi;
+// src: url("../fonts/NotoSansArabicUI-SemiCondensedBlack.ttf");
+// }
+
+.hor-line{
+    width: 140px;
+    align-items:left; 
+    width:"50%";
+    border: 3px solid #FE6A00;
+    text-align:left;
+    margin-left:0;
+    border-radius: 10px;
+}
+
+.box-line{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.know-more{
+    position:relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.title-know-more{
+    position:absolute;
+    top: -30px;
+    margin-bottom: 10px;
+    // left: -20px;
+}
+.hor-line-support{
+    width: 140px;
+    /* text-align: left; */
+    position: absolute;
+    bottom: -33px;
+    /* color: #FE6A00; */
+    border: 3px solid #FE6A00;
+    /* right: 0px; */
+    display: block;
+    border-radius: 10px;
+}
+
+.hjz-introduction{
+    margin-top: 10px;
+}
+//Font-HEADER
+.header-font{
+    font-size: 1.5em !important;
+}
+
+.en-font .sub-header{
+    font-size: 1em !important;
+    // position: relative;
+    line-height: 0.8 ;
+    margin-bottom: 5px;;
+}
+
+.ar-font .sub-header{
+    line-height: 1.5 ;
+}
+
+
+.sub-header-font{
+    line-height: 0.1 !important;
+    display: contents !important;
+    font-size: 1.4em !important;
+}
+.sub-header-how{
+    font-size: 1.4em !important;
+}
+
+.header-section > h2{
+    font-size: 2em !important;
+}
+
+
+
+.how-style{
+    display: flex;
+}
+
+.how-style > p{
+    margin: 0 5px !important;
+
+}
+
+/* Arabic styles */
+.ar {
+    text-align: right !important;
+
+}
+
+
+
+/* 
+ Eng Arabic styles
+ Start English styles
+*/
+.en {
+    text-align: left !important;
+}
+
+
+
+body{
+    direction: rtl ;
+}
+
+.logo-img-en{
+    position: inherit;
+}
+
+// .logo-img-en > img {
+//     // position: relative;
+//     // left: 0px;
+//     // top: 5px;
+// }
+
+.logo-img-ar{
+    position: inherit;
+}
+
+// .logo-img-ar > img {
+//     // position: relative;
+//     // left: -30px;
+//     // top: 5px;
+// }
+
+#form{
+    justify-content: flex-start;
+}
+
+
+#btunn:hover{
+    background-color: #fe6a00cf;
+}
+
+
+#img-question{
+    max-width: 100%;
+}
+
+#FAQs{
+    padding-top: 0;
+}
+
+#HowUseIt{
+    padding-bottom: 0px;
+}
+
+#sub-head{
+    font-size: 0.8em !important;
+    // line-height: 0.7 !important;
+}
+
+.css-c0rvfs-PremiumFeature{
+    margin-bottom: 50px !important;
+}
+@media (max-width:1023px) { 
+    .know-more{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #sub-head{
+        font-size: 1em !important;
+    }
+    
+    #form > div{
+        width: 100%;
+    }
+    #form > div > input{
+        text-align: center;
+    }
+    
+    .logo-nav-en{
+        position: relative;
+        left: -30px;
+        top: 5px;
+    }
+    
+    
+    
+    #img-question{
+        max-width: 50%;
+    }
+
+    #main-image{
+        margin: 0 auto;
+    }
+
+ }
+
+
+@media (max-width: 576px) { 
+    #main-image{
+        margin-top: 20px;
+    }
+    #sub-head{
+        font-size: 1em !important;
+    }
+    
+    #form > div{
+        width: 100%;
+    }
+    #form > div > input{
+        text-align: center;
+    }
+    
+    .logo-nav-en{
+        position: relative;
+        left: 10px;
+        top: -14px;
+    }
+    
+    #img-question{
+        width: 100%;
+        max-height: 150px;
+        margin-bottom: 30px;
+    }
+
+    #form{
+        justify-content: center;
+    }
+
+    #icon > img {
+        width: 70px;
+        margin-right: 5px;
+
+    }
+
+    #icon > h1 {
+        margin-right: 5px;
+        font-size: 35px;
+    }
+
+    #icon > div > div > h4 {
+        font-size: 20px;
+    }
+
+    #img-question{
+        max-width: 100%;
+        }
+
+  
+        
+    #FAQs{
+        padding:0px;
+        padding-bottom:20px;
+    }   
+ }
+
+
+
+ #header-en,#logo-nav{
+     direction: ltr !important;
+ }
+
+
+.ar-font .font-family{
+    font-family: 'noto-sans-arabic-medium', sans-serif !important;
+ }
+
+.ar-font  * {
+    font-family: 'noto-sans-arabic-medium',sans-serif !important;
+}
+
+// .ar-font  > .css-1vt9vkt-Banner, .ar-font > .css-1vt9vkt-Banner, .ar-font > * {
+//     font-family: 'noto-sans-arabic-medium','nexa-bold',sans-serif !important;
+// }
+
+.ar-font  >  .css-1vt9vkt-Banner, .ar-font > .css-1vt9vkt-Banner, .ar-font > *  {
+    font-family: 'noto-sans-arabic-medium',sans-serif !important;
+}
+.ar-font  span,  a ,h2, .ar-font  h3, .ar-font button, .ar-font h1,.ar-font  h2,.ar-font  h3, .ar-font button   {
+    font-family: 'noto-sans-arabic-bold',sans-serif !important;
+}
+
+
+
+
+.en-font .font-family{
+    font-family: 'nexa-light', sans-serif !important;
+ }
+
+.en-font  * {
+    font-family: 'nexa-light',sans-serif !important;
+}
+
+// .en-font  > .css-1vt9vkt-Banner, .en-font > .css-1vt9vkt-Banner, .en-font > * {
+//     font-family: 'nexa-light','nexa-bold',sans-serif !important;
+// }
+
+.en-font  >  .css-1vt9vkt-Banner, .en-font > .css-1vt9vkt-Banner, .en-font > *  {
+    font-family: 'nexa-light',sans-serif !important;
+}
+.en-font  span,  a ,h2, .en-font  h3, .en-font button, .en-font h1,.en-font  h2,.en-font  h3, .en-font button   {
+    font-family: 'nexa-bold',sans-serif !important;
+}
+
+
+
+textarea:focus, input:focus,input:focus-visible , *:focus-visible *:focus , #company-name:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+
+.swal-footer {
+    text-align: center ;
+  }
+
+.swal-button {
+    background: #000033 !important;
+}
+
