@@ -49,35 +49,8 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
   }
 
   return (
-    <Flex onSubmit={SendInformation} as="form" id="form" sx={styles.form} {...props} >
-        <Grid gap={4} columns={[1, null, 2]} >
-            <Label htmlFor="company-name" variant="styles.srOnly">
-              {t('Company-Name')}
-            </Label>
-            <Input 
-              type="text"
-              id="company-name"
-              placeholder={t('Company-Name')}
-              maxLength = {80}
-              
-            />
-          
-        
-          <Label htmlFor="company-mobile" variant="styles.srOnly">
-            {t('Mobile')}
-          </Label>
-          
-          <Input
-            type="tel"
-            id="company-mobile"
-            placeholder="ex: 0560000000"
-            language="en"
-            maxLength = {10}
-          />
-                    
-        </Grid>
-          <Button  id="btunn" style={{margin: "5px",background:"#FE6A00",color:"white", display:'block'}}>{buttonLabel ?? t('Subscribe')}</Button>
-      
+    <Flex onSubmit={SendInformation}  {...props}  style={{display: "flex",alignItems: "center",justifyContent: "center"}}>
+        <Button  style={{margin: "5px",background:"#8314AA",color:"white", display:'block'}}>{buttonLabel ?? t('Subscribe')}</Button>
     </Flex>
   );
 };

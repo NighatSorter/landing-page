@@ -77,7 +77,7 @@ const PremiumFeature = () => {
                 <h1 sx={styles.number}>01</h1>
                 <Flex>
                   <Box sx={styles.descriptionBox}>
-                  <h4 style={{marginBottom:0,color:'#FE6A00'}} className="sub-header-how">{t("How-work-Title-01")}</h4>
+                  <h4 style={{marginBottom:0,color:'#8314AA'}} className="sub-header-how">{t("How-work-Title-01")}</h4>
                   <p style={{color:'#000033',marginTop:0}}>{t("How-work-Description-01")}</p>
                   </Box>
                 </Flex>
@@ -87,7 +87,7 @@ const PremiumFeature = () => {
                 <h1 sx={styles.number}>02</h1>
                 <Flex>
                   <Box sx={styles.descriptionBox}>
-                  <h4 style={{marginBottom:0,color:'#FE6A00'}} className="sub-header-how">{t("How-work-Title-02")}</h4>
+                  <h4 style={{marginBottom:0,color:'#8314AA'}} className="sub-header-how">{t("How-work-Title-02")}</h4>
                   <p style={{color:'#000033',marginTop:0}}>{t("How-work-Description-02")}</p>
                   </Box>
                 </Flex>
@@ -97,7 +97,7 @@ const PremiumFeature = () => {
                 <h1 sx={styles.number}>03</h1>
                 <Flex>
                   <Box sx={styles.descriptionBox}>
-                  <h4 style={{marginBottom:0, color:'#FE6A00'}} className="sub-header-how">{t("How-work-Title-03")}</h4>
+                  <h4 style={{marginBottom:0, color:'#8314AA'}} className="sub-header-how">{t("How-work-Title-03")}</h4>
                   <p style={{color:'#000033',marginTop:0}}>{t("How-work-Description-03")}</p>
                   </Box>
                 </Flex>
@@ -132,7 +132,7 @@ const styles = {
       textAlign: 'center',
       height: '100%',
       background: '#FAFAFA',
-      border: '5px solid #FE6A00',
+      border: '5px solid #8314AA',
       padding: '15px 0',
       fontSize: '1.8em'
     } 
@@ -179,7 +179,7 @@ const styles = {
     maxWidth: [null, null, null, 520, 660],
     h2: {
       fontWight:'bold',
-      color:'#FE6A00',
+      color:'#8314AA',
       fontSize: '3em',
       margin: "0px",
       // fontSize: [null, null, null, 20, 8, 40],

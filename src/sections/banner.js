@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import hjzWord from '../assets/images/Hjz-word.svg';
+import hjzWord from '../assets/images/nighatremovebgpreview.png';
 import { jsx, Box, Container, Text } from 'theme-ui';
 // import { useStaticQuery, graphql } from 'gatsby';
 import { rgba } from 'polished';
 // import Img from 'components/image';
 import SubscriptionForm from '../components/subscription-form';
-import hjzHeader from '../assets/images/banner02.svg';
+import hjzHeader from '../assets/images/banner02.png';
 // import headerArrow from '../assets/images/headerArrow.svg';
 import headerArrowEn from '../assets/images/headerArrow-en.svg';
 
@@ -53,7 +53,7 @@ const Banner = () => {
             <h1 style={{lineHeight:'0.9'}}>
               <span className="header-font" style={{lineHeight: "0.8",fontSize: "2em",color: "#083c3a"}}>
                 {/* {t("hjz")} */}
-                <img  src={hjzWord} alt='hjz' />
+                <img  src={hjzWord} alt='nighat'  style={{width:"100px",height:"60px",marginBottom: "-10px"}}/>
               </span>
               <span className="sub-header" id="sub-head" >
                 {t("ONE-STOP-SHOP")}
@@ -84,10 +84,10 @@ const Banner = () => {
               alt="illustration"
             /> */}
           
-            <img  src={hjzHeader} alt='hjz' />
+            <img  src={hjzHeader} alt='nighat' />
           </Box>
         <div className='know-more'>
-         <img  src={headerArrowEn} alt='hjz' />
+         <img  src={headerArrowEn} alt='nighat' />
          <h3 className="title-know-more">{t("know-more-title")}</h3>
         </div>
         </Box>

@@ -1,11 +1,11 @@
 import React from 'react';
 // import LogoWhite from '../assets/images/logo-white.png';
-import hjz from '../assets/images/Hjz.svg';
+import hjz from '../assets/images/nighatWithoutBackground.png';
 
 const Logo = ({ isWhite, ...props }) => {
   return (
     <div>
-      <img  src={hjz} alt='hjz' />
+      <img  src={hjz} alt='hjz' style={{width:"60.92px",height:"40.62px"}}/>
       {/* style={{width:"185.92px",height:"36.62px"}} */}
 
       {/* <svg viewBox="0 0 185.92 36.62" width={185.92} height={36.62} {...props}>

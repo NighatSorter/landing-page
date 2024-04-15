@@ -32,7 +32,7 @@ export default function Footer() {
            <Text as="span"><a href="/policyGuest" style={{color:"white"}}>الشروط و الاحكام  للعميل</a></Text>
             <Logo isWhite />
             <Text as="span">
-              &copy; Copyright by Hjz {new Date().getFullYear()}  
+              &copy; Copyright by Nighat {new Date().getFullYear()}  
             </Text>
           </Flex>
           <Flex as="ul" sx={styles.footerNav}>

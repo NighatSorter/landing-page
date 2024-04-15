@@ -55,9 +55,9 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
   }
 
   return (
-    <Flex onSubmit={SendInformation} as="form" id="form" sx={styles.form} {...props}>
+    <Flex onSubmit={SendInformation}  sx={styles.form} {...props}>
         <Grid gap={4} columns={[1, null, 2]} >
-            <Label htmlFor="company-name" variant="styles.srOnly">
+            {/* <Label htmlFor="company-name" variant="styles.srOnly">
               {t('Company-Name')}
             </Label>
             <Input 
@@ -79,8 +79,9 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
             placeholder="ex: 0560000000"
             language="en"
             maxLength = {10}
-          />                
-          <Button  id="btunn" style={{margin: "0px"}}>{buttonLabel ?? t('Subscribe')}</Button>
+          />                 */}
+          {/* <Button  id="btunn" style={{margin: "0px"}}>{buttonLabel ?? t('Subscribe')}</Button> */}
+          <Button  style={{margin: "0px"}}>{buttonLabel ?? t('Subscribe')}</Button>
         </Grid>
        
     </Flex>
@@ -101,7 +102,7 @@ const styles = {
     button: {
       ml: [0],
       alignItem: 'center',
-      backgroundColor:'#FE6A00'
+      backgroundColor:'#8314AA'
     },
     
   },

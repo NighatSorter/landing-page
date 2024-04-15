@@ -106,7 +106,7 @@ const styles = {
     ],
   },
   supportItem: {
-    border: "2px solid #FE6A00",
+    border: "2px solid #8314AA",
     borderRadius: "15px",
     backgroundColor: '#FFFFFF',
     // borderRadius: 7,

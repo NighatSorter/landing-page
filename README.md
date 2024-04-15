@@ -6,6 +6,6 @@
 </p>
 <h1 align="center">
   Nighat is revolutionizing Date-Sourcing with AI Technology. 
-  ![alt text](https://i.ibb.co/5KGGWQ9/Screenshot-2024-04-15-at-11-14-10.png)
+  ![Nighat image](https://i.ibb.co/5KGGWQ9/Screenshot-2024-04-15-at-11-14-10.png)
 </h1>
 

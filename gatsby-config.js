@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Hjz | حجز`,
-    description: `حجز مطعم, حجز طاولة, حجز كوفي, حجز مطاعم`,
-    author: `@hjz.sa`,
+    title: `Nighat | نقاة`,
+    description: ` فرز التمور, نقاة لفرز التمور, جهاز فرز التمور, جهاز فرز التمور بأستخدام الذكاء الأصطناعي`,
+    author: `@nighat.sa`,
   },
   plugins: [
   {
@@ -110,8 +110,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.hjz.sa',
-        sitemap: 'https://www.hjz.sa',
+        host: 'https://www.nighat.sa',
+        sitemap: 'https://www.nighat.sa',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

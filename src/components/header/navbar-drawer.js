@@ -180,6 +180,6 @@ const styles = {
     fontSize: 1,
     minHeight: 45,
     margin: 'auto 30px 40px',
-    background:'#FE6A00'
+    background:'#8314AA'
   },
 };

@@ -30,14 +30,6 @@ const PremiumFeature = () => {
           {t("FAQ-Description-02")}
         </div>
       ),
-    },
-    {
-      title: t("FAQ-Title-03"),
-      contents: (
-        <div>
-          {t("FAQ-Description-03")}
-        </div>
-      ),
     }
   ];
   // const image = useStaticQuery(graphql`
@@ -110,7 +102,7 @@ const styles = {
     maxWidth: [null, null, null, 520, 660],
     h2: {
       fontSize: [null, null, null, 10, 8, 40],
-      color:"#FE6A00",
+      color:"#8314AA",
       img: {
         maxWidth: [24, null, null, 30, 25, null, '100%'],
         top: ['4px', '8px', null, null, '4px', '8px'],
