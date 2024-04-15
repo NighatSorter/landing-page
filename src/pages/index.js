@@ -21,8 +21,8 @@ export default function IndexPage() {
 
     <Layout >
       <SEO
-        title="حجز مطعم, حجز كوفي"
-        description="حجز طاولة, حجز مطعم, حجز كوفي, حجز مطاعم"
+        title="Nighat | نقاة"
+        description="فرز التمور, نقاة لفرز التمور, جهاز فرز التمور, جهاز فرز التمور بأستخدام الذكاء الأصطناعي"
       />
      
       <Banner />

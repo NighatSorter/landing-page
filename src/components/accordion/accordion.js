@@ -62,7 +62,7 @@ const styles = {
     p: ['15px', '20px 30px', '30px 45px', '20px 25px', '20px 35px'],
     '&.is-open': {
       
-      backgroundColor: '#FFF0E5',
+      backgroundColor: '#8314aa21',
       boxShadow: '0px 9px 30px rgba(69, 88, 157, 0.08)',
     },
   },

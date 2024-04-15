@@ -91,7 +91,7 @@ const styles = {
   section: {
     pt: [9, null, null, 10, 11, 11, 11],
     pb: [7, null, null, 8, null, 9, 10],
-    backgroundColor: "#FFF0E5"
+    backgroundColor: "#8314aa21"
   },
   grid: {
     gap: ['60px 60px'],
