@@ -5,6 +5,6 @@
   </a>
 </p>
 <h1 align="center">
-  Hjz: One-stop-shop for waitlists, reservations, and appointments mangement.
+  Nighat is revolutionizing Date-Sourcing with AI Technology. 
 </h1>
 
