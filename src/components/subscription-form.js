@@ -81,7 +81,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
             maxLength = {10}
           />                 */}
           {/* <Button  id="btunn" style={{margin: "0px"}}>{buttonLabel ?? t('Subscribe')}</Button> */}
-          <Button  style={{margin: "0px"}}>{buttonLabel ?? t('Subscribe')}</Button>
+          <Button  style={{margin: "0px"}}><a style={{color: "white",textDecoration: "none"}} href="https://1ppcs512bgy.typeform.com/to/qQ0qa6VL">{buttonLabel ?? t('Subscribe')}</a></Button>
         </Grid>
        
     </Flex>

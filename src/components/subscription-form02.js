@@ -50,7 +50,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
 
   return (
     <Flex onSubmit={SendInformation}  {...props}  style={{display: "flex",alignItems: "center",justifyContent: "center"}}>
-        <Button  style={{margin: "5px",background:"#8314AA",color:"white", display:'block'}}>{buttonLabel ?? t('Subscribe')}</Button>
+        <Button  style={{margin: "5px",background:"#8314AA",color:"white", display:'block'}}><a style={{color: "white",textDecoration: "none"}} href="https://1ppcs512bgy.typeform.com/to/qQ0qa6VL">{buttonLabel ?? t('Subscribe')}</a></Button>
     </Flex>
   );
 };
