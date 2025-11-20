@@ -13,13 +13,16 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configure CORS for reverse proxy setup
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["*"],  # In production, replace with your domain
-        "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": ["*"],  # In production, replace with your domain
+            "methods": ["GET", "POST", "OPTIONS"],
+            "allow_headers": ["Content-Type"],
+        }
+    },
+)
 
 # Email configuration from .env
 SMTP_SERVER = "smtp.gmail.com"
