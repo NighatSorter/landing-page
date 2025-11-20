@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Mail, Phone } from "lucide-react";
 import { useI18n } from "@/i18n/I18nProvider";
-
+import footerLogo from "@/assets/NighatLogo.svg";
 export default function Footer() {
     const { t, lang } = useI18n();
     const isRTL = lang === "ar";
@@ -49,7 +49,7 @@ export default function Footer() {
                     <motion.div variants={fadeInUp} className="flex flex-col items-center md:items-start gap-4">
                         <div className="flex items-center gap-3">
                             <img
-                                src="/NighatLogo.svg"
+                                src={footerLogo}
                                 alt={t.brand}
                                 className="h-11 w-auto opacity-95"
                             />

@@ -24,6 +24,9 @@ import flowStep1 from "@/assets/flow/step1.svg";
 import flowStep2 from "@/assets/flow/step2.svg";
 import flowStep3 from "@/assets/flow/step3.svg";
 
+import machineVideo from "@/assets/videos/machine-flow-demo.mp4";
+
+
 export default function MachinePage() {
     const { lang } = useI18n();
     const isRTL = lang === "ar";
@@ -307,7 +310,7 @@ function MachineVideoSection() {
                             <video
                                 ref={videoRef}
                                 className="w-full h-full object-contain bg-black"
-                                src="/videos/machine-flow-demo.mp4"
+                                    src={machineVideo}
                                 poster={thumbSrc}
                                 controls
                                 playsInline

@@ -2,6 +2,7 @@ import { useState, type MouseEvent } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useI18n } from "../i18n/I18nProvider";
 import { ContactButton } from "@/components/ContactButton";
+import Logo from "@/assets/NighatLogo.svg";
 
 export default function NavbarAurora() {
   const { t } = useI18n();
@@ -55,7 +56,7 @@ export default function NavbarAurora() {
             className="flex items-center gap-2"
           >
             <img
-              src="/NighatLogo.svg"
+              src={Logo}
               alt="Nighat Logo"
               className="h-12 w-auto opacity-95"
             />
