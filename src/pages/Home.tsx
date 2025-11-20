@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type JSX } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import { GitBranch, SquareStack } from "lucide-react";
-
+import heroBg from "@/assets/background.svg";
 import { useI18n } from "@/i18n/I18nProvider";
 import { useToast } from "@/components/ui/ToastProvider";
 import NavbarAurora from "@/components/NavbarGlass";
@@ -22,6 +22,16 @@ import customMouse from "@/assets/custom-mouse.svg";
 import "@/styles/GlassIcons.css";
 import { SERVICE_CATEGORIES, type CategoryId } from "@/sections/services.data";
 import { PROJECTS_META } from "@/sections/projects.data";
+import kacstLogo from "@/assets/partners/KACST.svg";
+import moimrLogo from "@/assets/partners/MOIMR.svg";
+import ntdpLogo from "@/assets/partners/NTDP.svg";
+import saudiAgriLogo from "@/assets/partners/SaudiAgriFoodTechAliance.svg";
+import nvidiaLogo from "@/assets/partners/NVIDIA.svg";
+import roboflowLogo from "@/assets/partners/Roboflow.svg";
+import baslerLogo from "@/assets/partners/Basler.svg";
+import abduGroupLogo from "@/assets/partners/AbduGroup.svg";
+import alkhamashLogo from "@/assets/partners/ALkhamash.svg";
+
 
 export default function HomePage() {
   const { lang } = useI18n();
@@ -59,11 +69,11 @@ export default function HomePage() {
     showToast({
       title:
         lang === "ar"
-          ? "ÔßÑðÇ áÊæÇÕáß ãÚäÇ ?"
+          ? "ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ?"
           : "Your message was sent successfully ?",
       description:
         lang === "ar"
-          ? "ÇÓÊáãäÇ ÑÓÇáÊß¡ æÝÑíÞäÇ íÑÇÌÚåÇ ÇáÂä æÓíÚÇæÏ ÇáÇÊÕÇá Èß ÞÑíÈðÇ."
+          ? "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½."
           : "We're happy you reached out and will get back to you soon.",
       durationMs: 3500,
     });
@@ -120,9 +130,16 @@ function Hero() {
     <section
       id="hero"
       dir={isAr ? "rtl" : "ltr"}
-      className="relative flex min-h-[calc(100vh-96px)] items-center justify-center overflow-hidden bg-[url('/background.svg')] bg-cover bg-center bg-no-repeat pt-32 pb-20 md:pt-40"
+      className="
+    relative flex min-h-[calc(100vh-96px)] items-center justify-center
+    overflow-hidden
+    bg-cover bg-center bg-no-repeat
+    pt-32 pb-20 md:pt-40
+  "
       aria-label={hero.ariaLabel}
+      style={{ backgroundImage: `url(${heroBg})` }}  
     >
+
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
@@ -1140,16 +1157,17 @@ function ImpactSection() {
 }
 
 const logos = [
-  { src: "/partners/KACST.svg", alt: "KACST logo", width: 140 },
-  { src: "/partners/MOIMR.svg", alt: "MOIMR logo", width: 140 },
-  { src: "/partners/NTDP.svg", alt: "NTDP logo", width: 140 },
-  { src: "/partners/SaudiAgriFoodTechAliance.svg", alt: "Saudi Agri Food Tech Alliance logo", width: 220 },
-  { src: "/partners/NVIDIA.svg", alt: "NVIDIA logo", width: 140 },
-  { src: "/partners/Roboflow.svg", alt: "Roboflow logo", width: 160 },
-  { src: "/partners/Basler.svg", alt: "Basler logo", width: 140 },
-  { src: "/partners/AbduGroup.svg", alt: "Abdu Group logo", width: 180 },
-  { src: "/partners/ALkhamash.svg", alt: "Alkhamash logo", width: 170 },
+  { src: kacstLogo, alt: "KACST logo", width: 140 },
+  { src: moimrLogo, alt: "MOIMR logo", width: 140 },
+  { src: ntdpLogo, alt: "NTDP logo", width: 140 },
+  { src: saudiAgriLogo, alt: "Saudi Agri Food Tech Alliance logo", width: 220 },
+  { src: nvidiaLogo, alt: "NVIDIA logo", width: 140 },
+  { src: roboflowLogo, alt: "Roboflow logo", width: 160 },
+  { src: baslerLogo, alt: "Basler logo", width: 140 },
+  { src: abduGroupLogo, alt: "Abdu Group logo", width: 180 },
+  { src: alkhamashLogo, alt: "Alkhamash logo", width: 170 },
 ];
+
 
 function PartnersSection() {
   const { t, lang } = useI18n();

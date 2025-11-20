@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavbarGlass";
 import { useI18n } from "@/i18n/I18nProvider";
 import { useToast } from "@/components/ui/ToastProvider";
+import phoneHandset from "@/assets/phone-handset.png";
 
 export default function ContactPage() {
   const { lang } = useI18n();
@@ -295,7 +296,7 @@ export default function ContactPage() {
                                 "
               >
                 <img
-                  src="/phone-handset.png"
+                  src={phoneHandset}
                   alt=""
                   className="
                                         w-[380px] md:w-[380px] lg:w-[380px]
