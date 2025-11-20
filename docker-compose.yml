@@ -1,5 +1,32 @@
+version: "3.9"
+
 services:
-  web:
-    build: .
+  # Backend - Flask API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - FLASK_ENV=production
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Frontend - React + Nginx
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

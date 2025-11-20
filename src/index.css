@@ -1,0 +1,247 @@
+/* === Tailwind core === */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* === Theme: font === */
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* === Light theme tokens (لايت فقط) === */
+:root {
+  --bg: #ffffff;
+  /* خلفية فاتحة */
+  --fg: #38105F;
+  /* بنفسجي غامق للنصوص الأساسية */
+  --muted: oklch(0.45 0.02 286.375);
+  /* نص ثانوي (رمادي بنفسجي) */
+  --border: oklch(0.92 0.004 286.32);
+  /* حدود فاتحة واضحة */
+  --accent: #461178;
+  /* بنفسجي فاتح للأزرار والهايلايت */
+  --radius: 0.625rem;
+
+  /* ربط مع @layer base */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --ring: oklch(0.705 0.015 286.067);
+  /* لون الحلقة عند التركيز */
+}
+
+/* ارتفاع كامل للصفحة */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* تطبيق الخط والألوان العامة */
+body {
+  @apply font-sans antialiased;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* حاوية قياسية */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 72rem;
+}
+
+/* ===== Glassmorphism Utilities ===== */
+@layer utilities {
+  /* Base glass effect */
+  .glass {
+    @apply bg-white/60 backdrop-blur-2xl shadow-lg rounded-2xl border border-black/10;
+  }
+
+  /* Glass card with padding */
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-2xl shadow-lg rounded-2xl border border-black/10 p-6 md:p-8;
+  }
+
+  /* Glass variants for consistent styling */
+  .glass-light {
+    @apply bg-white/60 backdrop-blur-xl border border-black/10 shadow-lg rounded-2xl;
+  }
+
+  .glass-medium {
+    @apply bg-white/70 backdrop-blur-2xl border border-black/10 shadow-lg rounded-2xl;
+  }
+
+  .glass-strong {
+    @apply bg-white/80 backdrop-blur-3xl border border-black/10 shadow-lg rounded-2xl;
+  }
+
+  /* Muted text color */
+  .muted {
+    color: #6C6693;
+  }
+
+  /* White background for SVGs in light mode */
+  .svg-bg-white {
+    @apply bg-white rounded-2xl shadow-md p-4 md:p-6;
+  }
+}
+
+/* أنيميشن بسيط للهيرو */
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-3px);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-fade {
+  opacity: 0;
+  animation: heroFade 1200ms cubic-bezier(.25, .9, .25, 1) forwards;
+  animation-delay: .2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-fade {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* === ربط مبسّط مع Tailwind tokens الأساسية === */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===== Partners Marquee (loop نظيف) ===== */
+.partners-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.partners-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  animation: partners-left var(--partners-speed, 30s) linear infinite;
+}
+
+.partners-row {
+  display: flex;
+  gap: 60px;
+  /* مسافة بين الشعارات */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+/* اتجاه افتراضي لليسار (صفّين متطابقين) */
+@keyframes partners-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* تبديل الاتجاه عند الحاجة */
+.partners-track[data-dir="right"] {
+  animation-name: partners-right;
+}
+
+@keyframes partners-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ===== Global scrollbar styling ===== */
+:root {
+  scrollbar-color: var(--accent) #ffffff;
+  scrollbar-width: thin;
+}
+
+@media (min-width: 768px) {
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--accent) 85%, transparent);
+}
+
+/* احترام تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  .partners-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}

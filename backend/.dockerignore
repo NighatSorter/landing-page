@@ -1,0 +1,18 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Docs
+README.md
+.env.example
+
+# Git
+.git/
+.gitignore
