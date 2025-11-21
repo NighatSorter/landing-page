@@ -7,6 +7,7 @@ import NavbarAurora from "@/components/NavbarGlass";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
+import datesAppImg from "@/assets/dates-app.png";
 
 export default function DateClassificationPage() {
     const { lang } = useI18n();
@@ -36,7 +37,6 @@ export default function DateClassificationPage() {
 function HeroDateClassification() {
     const { lang } = useI18n();
     const isArabic = lang === "ar";
-    const dateAppUrl = import.meta.env.VITE_WEBAPP_DATE_STATIC_IP;
 
     return (
         <section
@@ -61,20 +61,25 @@ function HeroDateClassification() {
             <div className="mx-auto flex w-full max-w-6xl lg:max-w-7xl items-center px-4 sm:px-8 lg:px-10">
                 <motion.div
                     {...fadeInUp(0.08)}
-                    className="
-                        grid w-full items-center gap-10
-                        lg:gap-16
-                        md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]
-                    "
+                    className={`
+                        grid w-full items-center
+                        gap-6
+                        md:gap-8
+                        lg:gap-10
+                        ${isArabic
+                            ? "md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]"
+                            : "md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]"
+                        }
+  `}
                 >
                     {/* صورة التطبيق — ريسبونسيف أكثر */}
                     <motion.div
                         {...fadeInUp(0.12)}
-                        className="order-2 md:order-1 flex justify-center md:justify-start"
+                        className="order-2 md:order-1 flex space-y15 justify-center  "
                     >
                         <div className="relative">
                             <img
-                                src="/dates-app.png"
+                                src={datesAppImg}
                                 alt={
                                     isArabic
                                         ? "لقطة شاشة لمنصة تصنيف التمور"
@@ -84,10 +89,10 @@ function HeroDateClassification() {
                                     block
                                     h-auto
                                     w-[220px]
-                                    sm:w-[260px]
-                                    md:w-[320px]
-                                    lg:w-[360px]
-                                    xl:w-[400px]
+                                    sm:w-[240px]
+                                    md:w-[260px]
+                                    lg:w-[280px]
+                                    xl:w-[300px]
                                     max-w-full
                                     rounded-[3rem]
                                 "
@@ -134,7 +139,7 @@ function HeroDateClassification() {
 
                         <div className="pt-3">
                             <motion.a
-                                href={dateAppUrl}
+                                href="http://157.175.31.166/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="
@@ -152,7 +157,7 @@ function HeroDateClassification() {
                                     focus-visible:ring-[#7A1CD1]
                                 "
                             >
-                                {isArabic ? "جرّب الآن" : "Try it now"}
+                                {isArabic ? "جرّب الآن" : "Try it now"  }
                             </motion.a>
                         </div>
                     </div>

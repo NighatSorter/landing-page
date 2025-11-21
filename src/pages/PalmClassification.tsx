@@ -7,6 +7,7 @@ import NavbarAurora from "@/components/NavbarGlass";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
+import palmAppImg from "@/assets/palm-app.png";
 
 export default function PalmClassificationPage() {
     const { lang } = useI18n();
@@ -36,7 +37,7 @@ export default function PalmClassificationPage() {
 function HeroPalmClassification() {
     const { lang } = useI18n();
     const isArabic = lang === "ar";
-    const palmAppUrl = import.meta.env.VITE_WEBAPP_PALM_STATIC_IP;
+    const palmAppUrl ="https://size-based-dates-web-app.vercel.app/";
 
     return (
         <section
@@ -61,20 +62,26 @@ function HeroPalmClassification() {
             <div className="mx-auto flex w-full max-w-6xl lg:max-w-7xl items-center px-4 sm:px-8 lg:px-10">
                 <motion.div
                     {...fadeInUp(0.08)}
-                    className="
-                        grid w-full items-center gap-10
-                        lg:gap-16
-                        md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]
-                    "
+                    className={`
+                        grid w-full items-center
+                        gap-6
+                        md:gap-8
+                        lg:gap-10
+                        ${isArabic
+                            ? "md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]"
+                            : "md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]"
+                        }
+  `}
                 >
                     {/* صورة التطبيق — عدّلي المسار حسب اسم الصورة الحقيقية عندك */}
                     <motion.div
                         {...fadeInUp(0.12)}
-                        className="order-2 md:order-1 flex justify-center md:justify-start"
+                        className="order-2 md:order-1 flex space-y15 justify-center  "
+
                     >
                         <div className="relative">
                             <img
-                                src="/palm-app.png"
+                                src={palmAppImg}
                                 alt={
                                     isArabic
                                         ? "لقطة شاشة لمنصة تصنيف النخيل"
@@ -84,10 +91,10 @@ function HeroPalmClassification() {
                                     block
                                     h-auto
                                     w-[220px]
-                                    sm:w-[260px]
-                                    md:w-[320px]
-                                    lg:w-[360px]
-                                    xl:w-[400px]
+                                    sm:w-[240px]
+                                    md:w-[260px]
+                                    lg:w-[280px]
+                                    xl:w-[300px]
                                     max-w-full
                                     rounded-[3rem]
                                 "

@@ -31,6 +31,11 @@ import roboflowLogo from "@/assets/partners/Roboflow.svg";
 import baslerLogo from "@/assets/partners/Basler.svg";
 import abduGroupLogo from "@/assets/partners/AbduGroup.svg";
 import alkhamashLogo from "@/assets/partners/ALkhamash.svg";
+import MCIT from "@/assets/partners/MCIT.svg";
+import NCPD from "@/assets/partners/NCPD.png";
+import sdaiaLogo from "@/assets/partners/sdaiaLogo.png";
+import madeInSaudiLogo from "@/assets/saudi-made.png";
+import saudiTechLogo from "@/assets/saudi-tech-green-ar.png";
 
 
 export default function HomePage() {
@@ -137,12 +142,12 @@ function Hero() {
     pt-32 pb-20 md:pt-40
   "
       aria-label={hero.ariaLabel}
-      style={{ backgroundImage: `url(${heroBg})` }}  
+      style={{ backgroundImage: `url(${heroBg})` }}
     >
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
+        className="pointer-events-none absolute inset-0 -z-20 overflow-hidden blur-[10px] "
       >
         <div className="absolute inset-0 bg-white/5" />
       </div>
@@ -244,6 +249,34 @@ function Hero() {
                   </span>
                 </StarBorder>
               </motion.div>
+              {/* شعارات صنع في السعودية + تقنية سعودية */}
+              <motion.div
+                {...fadeInUp(0.26)}
+                dir="ltr"   /* ← أهم شيء: نعزل الاتجاه! */
+                className="
+    mt-6
+    w-full
+    flex items-center 
+    gap-3 
+    justify-end     /* ← الآن يمين حقيقي */
+
+  "
+              >
+                <img
+                  src={saudiTechLogo}
+                  alt="Saudi Tech"
+                  className="h-8 sm:h-10 w-auto opacity-95"
+                  loading="lazy"
+                />
+                <img
+                  src={madeInSaudiLogo}
+                  alt="Made in Saudi Arabia"
+                  className="h-6 sm:h-8 w-auto opacity-95"
+                  loading="lazy"
+                />
+              </motion.div>
+
+
             </motion.div>
           </div>
         </motion.div>
@@ -367,7 +400,7 @@ function AboutSection({ id = "about" }: { id?: string }) {
             </motion.p>
           </motion.div>
 
-          {/* --- صورة الماوس (السك्रोल) --- */}
+          {/* --- صورة الماوس  --- */}
           <motion.img
             src={customMouse}
             alt={t.about.mouseAlt}
@@ -1166,6 +1199,10 @@ const logos = [
   { src: baslerLogo, alt: "Basler logo", width: 140 },
   { src: abduGroupLogo, alt: "Abdu Group logo", width: 180 },
   { src: alkhamashLogo, alt: "Alkhamash logo", width: 170 },
+  { src: MCIT, alt: "MCIT", width: 140 },
+  { src: NCPD, alt: "NCPD", width: 140 },
+  { src: sdaiaLogo, alt: "sdaiaLogo", width: 140 },
+
 ];
 
 
@@ -1213,13 +1250,6 @@ function PartnersSection() {
       {...fadeUp(0.1)}
     >
       <div className="container px-4 sm:px-6">
-        <motion.h2
-          id="partners-title"
-          {...fadeUp(0.2)}
-          className="text-center text-lg md:text-xl font-semibold tracking-tight text-[#2A004E]"
-        >
-          {t.partners.title}
-        </motion.h2>
 
         <motion.div
           {...fadeUp(0.3)}
