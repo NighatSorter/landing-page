@@ -265,13 +265,13 @@ function Hero() {
                 <img
                   src={saudiTechLogo}
                   alt="Saudi Tech"
-                  className="h-8 sm:h-6 w-auto opacity-95"
+                  className="h-8 sm:h-10 w-auto opacity-95"
                   loading="lazy"
                 />
                 <img
                   src={madeInSaudiLogo}
                   alt="Made in Saudi Arabia"
-                  className="h-6 sm:h-4 w-auto opacity-95"
+                  className="h-6 sm:h-8 w-auto opacity-95"
                   loading="lazy"
                 />
               </motion.div>
