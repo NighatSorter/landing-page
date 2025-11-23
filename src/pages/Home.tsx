@@ -23,14 +23,14 @@ import "@/styles/GlassIcons.css";
 import { SERVICE_CATEGORIES, type CategoryId } from "@/sections/services.data";
 import { PROJECTS_META } from "@/sections/projects.data";
 import kacstLogo from "@/assets/partners/KACST.svg";
-import moimrLogo from "@/assets/partners/MOIMR.svg";
-import ntdpLogo from "@/assets/partners/NTDP.svg";
-import saudiAgriLogo from "@/assets/partners/SaudiAgriFoodTechAliance.svg";
-import nvidiaLogo from "@/assets/partners/NVIDIA.svg";
-import roboflowLogo from "@/assets/partners/Roboflow.svg";
-import baslerLogo from "@/assets/partners/Basler.svg";
-import abduGroupLogo from "@/assets/partners/AbduGroup.svg";
-import alkhamashLogo from "@/assets/partners/ALkhamash.svg";
+import moimrLogo from "@/assets/partners/MOIMR.png";
+import ntdpLogo from "@/assets/partners/NTDP.png";
+import saudiAgriLogo from "@/assets/partners/SaudiAgriFoodTechAliance.png";
+import nvidiaLogo from "@/assets/partners/NVIDIA.png";
+import roboflowLogo from "@/assets/partners/Roboflow.png";
+import baslerLogo from "@/assets/partners/Basler.webp";
+import abduGroupLogo from "@/assets/partners/AbduGroup.png";
+import alkhamashLogo from "@/assets/partners/ALkhamash.webp";
 import MCIT from "@/assets/partners/MCIT.svg";
 import NCPD from "@/assets/partners/NCPD.png";
 import sdaiaLogo from "@/assets/partners/sdaiaLogo.png";
@@ -265,13 +265,13 @@ function Hero() {
                 <img
                   src={saudiTechLogo}
                   alt="Saudi Tech"
-                  className="h-8 sm:h-10 w-auto opacity-95"
+                  className="h-8 sm:h-6 w-auto opacity-95"
                   loading="lazy"
                 />
                 <img
                   src={madeInSaudiLogo}
                   alt="Made in Saudi Arabia"
-                  className="h-6 sm:h-8 w-auto opacity-95"
+                  className="h-6 sm:h-4 w-auto opacity-95"
                   loading="lazy"
                 />
               </motion.div>
@@ -1233,7 +1233,7 @@ function PartnersSection() {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 48,
+          duration: 60,
           ease: "linear",
         },
       },
