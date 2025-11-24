@@ -408,7 +408,7 @@ function MachineGradesSection() {
                 >
                     <p className="text-sm sm:text-base text-[#4B1F75] font-semibold leading-relaxed">
                         {isRTL
-                            ? "يمكن تدريب النموذج على الدرجات الخاصة بكم حسب ما يطلب العميل."
+                            ? "مكن تدريب النموذج على الدرجات الخاصة بكم بناءً على احتياجاتكم."
                             : "The model can be trained on your factory’s own grading system based on your requirements."}
                     </p>
                 </div>
@@ -439,18 +439,19 @@ function MachineBannerSection() {
                         bg-white/90 backdrop-blur-xl
                         border border-[#E4D9F7]
                         shadow-[0_18px_50px_-32px_rgba(56,16,95,0.45)]
-                        px-6 sm:px-10 py-4
-                        flex flex-col sm:flex-row items-center justify-between gap-3
+                        px-6 sm:px-10 py-5
+                        flex flex-col sm:flex-row items-center gap-4
                     "
                 >
+                    {/* النص */}
                     <div
                         className={`
                             flex-1
-                            ${isRTL ? "text-right" : "text-left"}
-                            text-center sm:text-start
+                            text-center
+                            ${isRTL ? "sm:text-right" : "sm:text-left"}
                         `}
                     >
-                        <p className="text-xs sm:text-sm font-medium text-[#7A1CD1] mb-1">
+                        <p className="text-xs sm:text-sm font-medium text-[#7A1CD1] mb-1.5">
                             {isRTL
                                 ? "جاهز للانتقال للخطوة التالية؟"
                                 : "Ready for the next step?"}
@@ -463,7 +464,15 @@ function MachineBannerSection() {
                         </p>
                     </div>
 
-                    <div className="shrink-0">
+                    {/* زر تواصل معنا */}
+                    <div
+                        className={`
+                            shrink-0
+                            w-full sm:w-auto
+                            flex justify-center
+                            ${isRTL ? "sm:justify-start" : "sm:justify-end"}
+                        `}
+                    >
                         <PrimaryButton href="/contact">
                             {isRTL ? "تواصل معنا" : "Contact us"}
                         </PrimaryButton>
@@ -673,31 +682,34 @@ function MachineInfoSection() {
 function MachinePricingSection() {
     const { lang } = useI18n();
     const isRTL = lang === "ar";
-    const align = isRTL ? "text-right" : "text-left";
-    const dir = isRTL ? "flex-row-reverse" : "flex-row";
+
+    const titleAlign = isRTL
+        ? "text-center md:text-right"
+        : "text-center md:text-left";
 
     return (
         <section
             className="
                 relative isolate w-full
                 px-4 sm:px-6 lg:px-10 xl:px-16
-                pb-10 md:pb-12
+                pb-12 md:pb-16
+                ios-safe-bottom
             "
             aria-labelledby="machine-details-title"
         >
             <div className="mx-auto w-full max-w-6xl">
                 <motion.div
                     {...fadeUp(0.05)}
-                    className={`
+                    className="
                         rounded-[26px] overflow-hidden
                         backdrop-blur-xl bg-gradient-to-l from-[#7A1CD1]/10 via-white to-[#2AABEE]/10
                         border border-white/80 shadow-[0_14px_40px_-20px_rgba(56,16,95,0.35)]
                         px-6 sm:px-10 py-8 sm:py-10
                         flex flex-col md:flex-row items-center justify-between gap-6
-                        ${dir}
-                    `}
+                    "
                 >
-                    <div className={`flex-1 ${align}`}>
+                    {/* النص */}
+                    <div className={`flex-1 ${titleAlign}`}>
                         <h2
                             id="machine-details-title"
                             className="font-extrabold text-2xl md:text-3xl text-[#38105F] mb-2"
@@ -707,14 +719,21 @@ function MachinePricingSection() {
                                 : "Need more details about the machine?"}
                         </h2>
 
-                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
                             {isRTL
                                 ? "إذا كنت ترغب بمعرفة طريقة التركيب، المتطلبات التشغيلية، التوافق مع خطوط الفرز الحالية، أو أي تفاصيل فنية إضافية — تواصل معنا وسنوضح لك كل شيء بشكل مختصر وواضح."
                                 : "If you want installation requirements, operational details, line compatibility info, or any additional technical specifications — contact us and we’ll walk you through everything clearly."}
                         </p>
                     </div>
 
-                    <div className={isRTL ? "md:ml-6" : "md:mr-6"}>
+                    {/* زر تواصل معنا */}
+                    <div
+                        className={`
+                            w-full md:w-auto
+                            flex justify-center
+                            ${isRTL ? "md:justify-start md:ml-6" : "md:justify-end md:mr-6"}
+                        `}
+                    >
                         <PrimaryButton href="/contact">
                             {isRTL ? "تواصل معنا" : "Contact us"}
                         </PrimaryButton>
@@ -724,6 +743,7 @@ function MachinePricingSection() {
         </section>
     );
 }
+
 
 /* ---------------- UI SUB COMPONENTS ---------------- */
 
