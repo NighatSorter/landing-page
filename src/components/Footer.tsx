@@ -19,7 +19,7 @@ export default function Footer() {
     const socialIcons = [
         { icon: Mail, href: "mailto:info@nighat.net", label: "Email" },
         { icon: Phone, href: "https://wa.me/966538582358", label: "WhatsApp" },
-        { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+        { icon: Linkedin, href: "https://linkedin.com/company/nighat/", label: "LinkedIn" },
         { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     ];
 
