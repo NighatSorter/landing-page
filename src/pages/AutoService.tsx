@@ -11,6 +11,8 @@ import carWashesImg from "@/assets/Car_Washes.png";
 import tireChangeImg from "@/assets/Tire_Change_Shops.png";
 import oilChangeImg from "@/assets/Oil_Change_Centers.png";
 import carAccessoriesImg from "@/assets/Car_Accessories_Center.png";
+import gasStationImg from "@/assets/gas-station.png";
+import restaurantCafeImg from "@/assets/Coffe.png";
 
 export default function AutoServicePage() {
     const { lang } = useI18n();
@@ -205,12 +207,16 @@ function WhoIsItForSection() {
             { icon: tireChangeImg, title: "ورش تغيير الإطارات" },
             { icon: oilChangeImg, title: "مراكز تغيير الزيت" },
             { icon: carAccessoriesImg, title: "مراكز زينة السيارات" },
+            { icon: gasStationImg, title: "محطات الوقود" },
+            { icon: restaurantCafeImg, title: "خدمات السيارات للمطاعم والمقاهي" },
         ]
         : [
             { icon: carWashesImg, title: "Car Washes" },
             { icon: tireChangeImg, title: "Tire Change Shops" },
             { icon: oilChangeImg, title: "Oil Change Centers" },
             { icon: carAccessoriesImg, title: "Car Accessories Center" },
+            { icon: gasStationImg, title: "Gas Stations" },
+            { icon: restaurantCafeImg, title: "Drive-through Services for Restaurants & Cafés" },
         ];
 
     return (
