@@ -6,6 +6,7 @@ import Contact from "@/pages/Contact";
 import Machine from "@/pages/Machine";
 import DateClassification from "@/pages/DateClassification";
 import PalmClassification from "@/pages/PalmClassification";
+import AutoService from "@/pages/AutoService";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageTransition from "@/components/PageTransition";
 
@@ -61,6 +62,14 @@ function AnimatedRoutes() {
                     element={
                         <PageTransition>
                             <PalmClassification />
+                        </PageTransition>
+                    }
+                />
+                <Route
+                    path="/auto-service"
+                    element={
+                        <PageTransition>
+                            <AutoService />
                         </PageTransition>
                     }
                 />

@@ -128,6 +128,12 @@ const messages = {
       openCta: "تفاصيل المشروع",
 
       items: {
+        "auto-service": {
+          title: "Auto-Service — إدارة خدمات السيارات",
+          description:
+            "نظام رقمي متكامل بالذكاء الاصطناعي يساعد المنشآت على تطوير أرباحهم ومراقبة أعمالهم.",
+          imageAlt: "معاينة تطبيق Auto-Service",
+        },
         "date-ai": {
           title: "تطبيق ويب لتصنيف التمور بالذكاء الاصطناعي",
           description:
@@ -212,6 +218,22 @@ const messages = {
       },
       brandAlt: "شعار نقاة",
       rights: "جميع الحقوق محفوظة",
+      compliance: {
+        heading: "مسجّل ومتوافق",
+        companyName: "شركة نقاة المحدودة",
+        crLabel: "السجل التجاري",
+        unifiedLabel: "الرقم الموحد",
+        crNumber: "1010983081",
+        unifiedNumber: "7038320771",
+        address:
+          "٤٣٠٩ طريق الملك عبدالله بن عبدالعزيز سعود الفرعي، حي الرائد ٨٧٧٨، الرياض ١٢٣٥٤، المملكة العربية السعودية",
+        logos: {
+          ndgp: "منصة حوكمة البيانات الوطنية",
+          sdaia: "الهيئة السعودية للبيانات والذكاء الاصطناعي",
+          zatca: "هيئة الزكاة والضريبة والجمارك",
+          sbc: "المركز السعودي للأعمال",
+        },
+      },
     },
 
     partners: {
@@ -310,6 +332,12 @@ const messages = {
       navNext: "Go to next project",
       openCta: "Open project",
       items: {
+        "auto-service": {
+          title: "Auto-Service — Car Service Management",
+          description:
+            "A fully integrated AI-powered digital system that helps businesses grow their profits and monitor their operations.",
+          imageAlt: "Preview of the Auto-Service app",
+        },
         "date-ai": {
           title: "AI web app for date classification",
           description: "Instantly recognizes date varieties from any snapshot.",
@@ -387,6 +415,22 @@ const messages = {
       },
       brandAlt: "نقاة",
       rights: "All rights reserved",
+      compliance: {
+        heading: "REGISTERED & COMPLIANT",
+        companyName: "Nighat Limited Company",
+        crLabel: "CR",
+        unifiedLabel: "Unified No.",
+        crNumber: "1010983081",
+        unifiedNumber: "7038320771",
+        address:
+          "4309 King Abdullah Ibn Abdulaziz Saud Branch, Al Raed Dist. 8778, Riyadh 12354, Kingdom of Saudi Arabia",
+        logos: {
+          ndgp: "National Data Governance Platform",
+          sdaia: "SDAIA",
+          zatca: "Zakat, Tax and Customs Authority",
+          sbc: "Saudi Business Center",
+        },
+      },
     },
     partners: {
       title: "Trusted by leading companies & organizations",

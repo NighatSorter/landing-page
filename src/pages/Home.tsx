@@ -853,9 +853,6 @@ function ProjectsSection(): JSX.Element {
     setIndex(clamped);
   };
 
-  const isLast = index === total - 1;
-  const centerBtnArrow: "left" | "right" = isLast ? "right" : "left";
-
   const formatLabel = (template: string, values: Record<string, number>) => {
     return template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""));
   };
@@ -883,7 +880,25 @@ function ProjectsSection(): JSX.Element {
 
       <div className="relative">
 
-        <div className="flex justify-center">
+        <div className="flex items-center justify-center gap-2 sm:gap-3">
+
+          {/* Next/Forward — LEFT side (swapped) */}
+          <motion.button
+            type="button"
+            onClick={() => index < total - 1 && goTo(index + 1)}
+            {...hoverLift}
+            className={`
+              shrink-0 grid place-items-center
+              h-9 w-9 sm:h-12 sm:w-12 rounded-full
+              bg-[var(--accent)] text-white
+              shadow-xl ring-2 sm:ring-4 ring-[var(--accent)]/15
+              transition-opacity
+              ${index === total - 1 ? "opacity-30 pointer-events-none" : ""}
+            `}
+            aria-label={t.projects.navNext}
+          >
+            <ArrowIcon dir="left" aria-hidden="true" />
+          </motion.button>
 
           <div
             ref={viewportRef}
@@ -909,9 +924,6 @@ function ProjectsSection(): JSX.Element {
                   total,
                 });
 
-                const navLabel = isLast
-                  ? t.projects.navPrev
-                  : t.projects.navNext;
 
                 return (
                   <section
@@ -980,36 +992,7 @@ function ProjectsSection(): JSX.Element {
                             </Link>
 
                           </motion.div>
-                          <motion.button
-                            type="button"
-                            onClick={() =>
-                              isLast ? goTo(index - 1) : goTo(index + 1)
-                            }
-                            {...hoverLift}
-                            animate={{
-                              scale: isActive ? 1 : 0.9,
-                              opacity: isActive ? 1 : 0.75,
-                            }}
-                            transition={{
-                              type: "spring",
-                              stiffness: 260,
-                              damping: 18,
-                            }}
-                            className="
-                              absolute top-1/2 -translate-y-1/2 -end-3 z-10
-                              grid place-items-center
-                              h-9 w-9 sm:h-12 sm:w-12
-                              rounded-full
-                              bg-[var(--accent)] text-white
-                              shadow-xl ring-2 sm:ring-4 ring-[var(--accent)]/15
-                            "
 
-                            aria-label={navLabel}
-                          >
-
-                            <ArrowIcon dir={centerBtnArrow} aria-hidden="true" />
-
-                          </motion.button>
 
                         </div>
 
@@ -1042,6 +1025,24 @@ function ProjectsSection(): JSX.Element {
             </div>
 
           </div>
+
+          {/* Prev/Backward — RIGHT side (swapped) */}
+          <motion.button
+            type="button"
+            onClick={() => index > 0 && goTo(index - 1)}
+            {...hoverLift}
+            className={`
+              shrink-0 grid place-items-center
+              h-9 w-9 sm:h-12 sm:w-12 rounded-full
+              bg-[var(--accent)] text-white
+              shadow-xl ring-2 sm:ring-4 ring-[var(--accent)]/15
+              transition-opacity
+              ${index === 0 ? "opacity-30 pointer-events-none" : ""}
+            `}
+            aria-label={t.projects.navPrev}
+          >
+            <ArrowIcon dir="right" aria-hidden="true" />
+          </motion.button>
 
         </div>
         <div className="mt-1 flex items-center justify-center gap-2">

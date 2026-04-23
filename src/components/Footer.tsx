@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 import { Linkedin, Twitter, Mail, Phone } from "lucide-react";
 import { useI18n } from "@/i18n/I18nProvider";
 import footerLogo from "@/assets/NighatLogo.svg";
+import ndgpLogo from "@/assets/NDGP-WOB.png";
+import sdaiaLogo from "@/assets/SDAIA-WOB.png";
+import zatcaLogo from "@/assets/ZTACA-WOB.png";
+import sbcLogo from "@/assets/SBC-WOB.png";
 export default function Footer() {
     const { t, lang } = useI18n();
     const isRTL = lang === "ar";
@@ -112,6 +116,50 @@ export default function Footer() {
                         </div>
                     </motion.div>
                 </div>
+
+                {/* Registered & Compliant */}
+                <motion.div variants={fadeInUp} className="pt-10 mt-10 border-t border-white/10">
+                    <p className="text-center text-[11px] sm:text-xs font-medium tracking-[0.28em] uppercase text-slate-400 mb-8">
+                        {footer.compliance.heading}
+                    </p>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 items-center">
+                        {[
+                            { src: ndgpLogo, alt: footer.compliance.logos.ndgp },
+                            { src: sdaiaLogo, alt: footer.compliance.logos.sdaia },
+                            { src: zatcaLogo, alt: footer.compliance.logos.zatca },
+                            { src: sbcLogo, alt: footer.compliance.logos.sbc },
+                        ].map((logo, i) => (
+                            <div
+                                key={logo.alt}
+                                className={`flex justify-center px-4 md:px-6 ${
+                                    i > 0 ? "md:border-s md:border-white/10" : ""
+                                }`}
+                            >
+                                <img
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    className="h-10 sm:h-12 md:h-14 w-auto object-contain opacity-90"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mt-10 text-center md:text-start text-slate-300/80 space-y-1.5">
+                        <p className="text-sm sm:text-base font-semibold text-slate-100">
+                            {footer.compliance.companyName}
+                        </p>
+                        <p className="text-xs sm:text-sm">
+                            {footer.compliance.crLabel}: {footer.compliance.crNumber}
+                            {" · "}
+                            {footer.compliance.unifiedLabel}: {footer.compliance.unifiedNumber}
+                        </p>
+                        <p className="text-xs sm:text-sm">
+                            {footer.compliance.address}
+                        </p>
+                    </div>
+                </motion.div>
 
                 {/* حقوق النشر */}
                 <motion.div variants={fadeInUp} className="pt-6 mt-10 border-t border-white/10 text-center">
