@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import NavbarAurora from "@/components/NavbarGlass";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Camera, Sparkles, Wifi } from "lucide-react";
 import { fadeInUp } from "@/lib/animations";
 import autoServiceImg from "@/assets/Auto-Sarvice.png";
 import carWashesImg from "@/assets/Car_Washes.png";
@@ -29,7 +30,7 @@ export default function AutoServicePage() {
         <main id="top" dir={dir} lang={lang}>
             <NavbarAurora />
             <HeroAutoService />
-            <AboutSection />
+            <ReadyToUseSection />
             <WhoIsItForSection />
             <FeaturesSection />
             <ImpactSection />
@@ -163,33 +164,185 @@ function HeroAutoService() {
     );
 }
 
-/* ---------------------- About Section ---------------------- */
+/* ---------------------- Ready-to-use Section ---------------------- */
 
-function AboutSection() {
+function ReadyToUseSection() {
     const { lang } = useI18n();
     const isArabic = lang === "ar";
 
+    const features = isArabic
+        ? [
+            {
+                icon: Camera,
+                title: "لا أجهزة جديدة",
+                desc: "يعمل مع كاميراتك الحالية دون شراء أي معدات إضافية.",
+            },
+            {
+                icon: Sparkles,
+                title: "لا تعقيد",
+                desc: "تشغيل بسيط وفوري، بدون إعدادات معقدة أو فرق تقنية.",
+            },
+            {
+                icon: Wifi,
+                title: "استهلاك بيانات منخفض",
+                desc: "نظام ذكي يقلل استهلاك الإنترنت بنسبة تصل إلى 98٪.",
+            },
+        ]
+        : [
+            {
+                icon: Camera,
+                title: "No new hardware",
+                desc: "Runs on your existing cameras — no extra equipment to buy.",
+            },
+            {
+                icon: Sparkles,
+                title: "Zero complexity",
+                desc: "Plug-and-play setup with no complex configuration or IT team.",
+            },
+            {
+                icon: Wifi,
+                title: "Ultra-low data usage",
+                desc: "A smart pipeline that cuts internet consumption by up to 98%.",
+            },
+        ];
+
     return (
-        <section className="bg-white py-16 md:py-20">
-            <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-10">
-                <motion.div
-                    {...fadeInUp(0.08)}
-                    className="space-y-4 text-center md:text-start"
+        <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fbf7ff] to-white py-20 md:py-28">
+            {/* Aurora glows */}
+            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+                <div className="absolute -top-24 left-1/4 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#7A1CD1,transparent)] opacity-20 blur-3xl" />
+                <div className="absolute -bottom-24 right-1/4 h-80 w-80 translate-x-1/2 rounded-full bg-[radial-gradient(circle,#2F7FF7,transparent)] opacity-20 blur-3xl" />
+            </div>
+
+            <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-10 text-center">
+                {/* Eyebrow */}
+                <motion.span
+                    {...fadeInUp(0.04)}
+                    className="
+                        inline-flex items-center gap-2
+                        rounded-full border border-[#EFE4FF]
+                        bg-white/70 backdrop-blur-md
+                        px-5 py-2
+                        text-xs sm:text-sm font-semibold text-[#7A1CD1]
+                        shadow-[0_18px_45px_-28px_rgba(56,16,95,0.6)]
+                    "
                 >
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#38105F]">
-                        {isArabic ? "عن Auto-Service" : "About Auto-Service"}
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/75">
+                    <Sparkles className="h-4 w-4" />
+                    {isArabic ? "جاهز للتشغيل فورًا" : "Ready out of the box"}
+                </motion.span>
+
+                {/* Headline */}
+                <motion.h2
+                    {...fadeInUp(0.1)}
+                    className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
+                >
+                    <span className="bg-gradient-to-r from-[#7A1CD1] via-[#5b1a9d] to-[#38105F] bg-clip-text text-transparent">
                         {isArabic
-                            ? "يواجه الملاك صعوبة في تتبع أداء منشأتهم بدونها، مما يجعل من الصعب معرفة عدد السيارات التي خُدمت، الوقت الذي استغرقته، أو ساعات العمل الفعلية."
-                            : "Business owners struggle to track their operations without proper tools, making it difficult to know how many vehicles were served, how long each service took, or actual working hours."}
-                    </p>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/70">
-                        {isArabic
-                            ? "طوّرنا Auto-Service لمنح أصحاب المنشآت لوحة تحكم ذكية تجمع كل هذه البيانات في مكان واحد، مما سيساعدهم على اتخاذ قرارات أسرع، تحسين جودة الخدمة، وزيادة الأرباح."
-                            : "We developed Auto-Service to give business owners a smart dashboard that brings all this data together in one place, helping them make faster decisions, improve service quality, and increase profits."}
-                    </p>
+                            ? "كل اللي تحتاجه عندك بالفعل"
+                            : "Everything you need is already there"}
+                    </span>
+                </motion.h2>
+
+                {/* Subtitle */}
+                <motion.p
+                    {...fadeInUp(0.16)}
+                    className="mt-5 text-base sm:text-lg md:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed"
+                >
+                    {isArabic
+                        ? "لا أجهزة. لا تعقيد. فقط نظام ذكي يعمل على كاميراتك ويقلل استهلاك البيانات بـ 98٪."
+                        : "No devices. No complexity. Just a smart system that works on your cameras and cuts data usage by 98%."}
+                </motion.p>
+
+                {/* 98% spotlight */}
+                <motion.div
+                    {...fadeInUp(0.22)}
+                    className="mt-12 flex justify-center"
+                >
+                    <div className="relative">
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-r from-[#7A1CD1]/30 via-[#9B4EE8]/25 to-[#2F7FF7]/30 blur-2xl"
+                        />
+                        <div
+                            className="
+                                relative inline-flex items-center gap-5
+                                rounded-[2rem] border border-white/70
+                                bg-white/85 backdrop-blur-xl
+                                px-7 py-5 sm:px-9 sm:py-6
+                                shadow-[0_30px_80px_-40px_rgba(56,16,95,0.7)]
+                            "
+                        >
+                            <span
+                                className="
+                                    text-6xl sm:text-7xl md:text-8xl font-black leading-none
+                                    bg-gradient-to-br from-[#7A1CD1] to-[#38105F]
+                                    bg-clip-text text-transparent
+                                "
+                            >
+                                98٪
+                            </span>
+                            <span className="text-start text-sm sm:text-base font-semibold text-[#38105F] leading-tight">
+                                {isArabic ? (
+                                    <>
+                                        أقل في
+                                        <br />
+                                        استهلاك
+                                        <br />
+                                        البيانات
+                                    </>
+                                ) : (
+                                    <>
+                                        less
+                                        <br />
+                                        data
+                                        <br />
+                                        usage
+                                    </>
+                                )}
+                            </span>
+                        </div>
+                    </div>
                 </motion.div>
+
+                {/* Feature pills */}
+                <div className="mt-14 grid gap-5 sm:grid-cols-3">
+                    {features.map((feat, i) => (
+                        <motion.div
+                            key={feat.title}
+                            {...fadeInUp(0.1 + i * 0.08)}
+                            whileHover={{ y: -4 }}
+                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            className="
+                                group relative
+                                rounded-3xl border border-[#EFE4FF]
+                                bg-white/85 backdrop-blur-md
+                                px-5 py-7 text-center
+                                shadow-[0_18px_55px_-35px_rgba(56,16,95,0.45)]
+                                hover:shadow-[0_28px_70px_-30px_rgba(122,28,209,0.45)]
+                                transition-shadow
+                            "
+                        >
+                            <div
+                                className="
+                                    mx-auto grid place-items-center
+                                    h-14 w-14 rounded-2xl
+                                    bg-gradient-to-br from-[#7A1CD1] to-[#38105F]
+                                    text-white
+                                    shadow-[0_18px_40px_-18px_rgba(122,28,209,0.7)]
+                                    group-hover:scale-110 transition-transform
+                                "
+                            >
+                                <feat.icon className="h-7 w-7" />
+                            </div>
+                            <h3 className="mt-4 text-base sm:text-lg font-bold text-[#38105F]">
+                                {feat.title}
+                            </h3>
+                            <p className="mt-2 text-xs sm:text-sm text-black/70 leading-relaxed">
+                                {feat.desc}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );
