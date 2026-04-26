@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  backend:
+    image: nighatregistry.azurecr.io/backend:latest
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  frontend:
+    image: nighatregistry.azurecr.io/frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
