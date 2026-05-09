@@ -1,4 +1,4 @@
-name: Build and Push to ACR
+name: Build and Deploy to Azure
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - LandingPageV2
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +29,7 @@ jobs:
         run: |
           docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/frontend:latest .
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/frontend:latest
+
+      - name: Trigger Azure redeploy via webhook
+        run: |
+          curl -X POST "${{ secrets.AZURE_WEBHOOK_URL }}"
